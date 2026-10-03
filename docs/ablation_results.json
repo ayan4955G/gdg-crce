@@ -1,0 +1,22 @@
+{
+  "Model A: Text Only": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0
+  },
+  "Model B: Text + Code": {
+    "accuracy": 0.9838,
+    "macro_f1": 0.9745
+  },
+  "Model C: Text + Code + AST Features": {
+    "accuracy": 0.9838,
+    "macro_f1": 0.9745
+  },
+  "Model D: Text + Code + AST + Execution": {
+    "accuracy": 0.8741,
+    "macro_f1": 0.8584
+  },
+  "Model E: Full Hybrid Evidence Fusion": {
+    "accuracy": 0.8919,
+    "macro_f1": 0.8849
+  }
+}

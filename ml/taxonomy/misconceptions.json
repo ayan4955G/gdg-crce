@@ -1,0 +1,410 @@
+{
+  "version": "1.0.0",
+  "domain": "introductory_programming",
+  "language": "python",
+  "misconceptions": [
+    {
+      "id": "P001",
+      "name": "Variable Assignment Confusion",
+      "concept": "variables",
+      "description": "Student misunderstands the unidirectional flow of assignment (`variable = expression`), treating it as algebraic equality or attempting to write `expression = variable` (e.g., `x + 1 = x` or swapping source and target).",
+      "observable_symptoms": [
+        "Inverting left and right sides of assignment statements",
+        "Believing `a = b` simultaneously changes both variables or makes them permanently coupled",
+        "Writing equations like `a + 5 = b` instead of `b = a + 5`"
+      ],
+      "common_errors": [
+        "SyntaxError: cannot assign to operator or literal",
+        "Overwriting target value before reading it (e.g. naive swap: `a = b; b = a`)",
+        "Expecting earlier variable to automatically recompute when dependent variables change"
+      ],
+      "similar_misconceptions": [
+        "P010",
+        "P005"
+      ],
+      "diagnostic_patterns": [
+        "Left-hand side of assignment AST is not a Name or Attribute",
+        "Learner explanation uses symmetric phrasing ('a equals b', 'sets both to be equal')",
+        "Naive variable swap without temp variable or simultaneous tuple unpacking"
+      ],
+      "intervention_strategy": [
+        {
+          "type": "guided_code_trace",
+          "action": "Trace memory boxes showing explicit value copy from right-hand expression into left-hand variable slot."
+        },
+        {
+          "type": "counterexample",
+          "action": "Show sequential updates where updating `b` does not alter `a` after `a = b`."
+        }
+      ],
+      "resolution_criteria": [
+        "Correctly executes two-variable swaps with temporary variables or tuple unpacking",
+        "Accurately predicts output of sequential reassignments without permanent coupling assumptions",
+        "Writes correct assignment syntax with single target identifier on left-hand side"
+      ]
+    },
+    {
+      "id": "P002",
+      "name": "Variable Scope Confusion",
+      "concept": "functions_and_scope",
+      "description": "Student confuses local function scope with global scope, expecting variables defined inside a function to be accessible outside, or conversely expecting function-level assignments to automatically mutate outer variables without returning them.",
+      "observable_symptoms": [
+        "Attempting to read local function variables from the global scope after function call",
+        "Modifying a parameter inside a function and expecting caller's variable to change without re-assignment or return",
+        "Unintentionally shadowing global variables with local variables of the same name"
+      ],
+      "common_errors": [
+        "NameError: name 'x' is not defined (when accessing local variable outside)",
+        "UnboundLocalError: local variable referenced before assignment",
+        "Function returns None while student assumes outer variables were mutated"
+      ],
+      "similar_misconceptions": [
+        "P007",
+        "P008",
+        "P010"
+      ],
+      "diagnostic_patterns": [
+        "AST accesses identifier defined strictly inside FunctionDef scope from Module body",
+        "Learner claims outer variable 'now has the value from the function' without re-binding return value",
+        "Omits return statement assuming function acts as an in-place macro"
+      ],
+      "intervention_strategy": [
+        {
+          "type": "code_trace",
+          "action": "Visualize call stack frames: showing frame creation on function entry and frame destruction upon return."
+        },
+        {
+          "type": "counterexample",
+          "action": "Demonstrate that assigning `x = 100` inside a function leaves global `x` untouched."
+        }
+      ],
+      "resolution_criteria": [
+        "Correctly distinguishes variables inside stack frames from module-level scope",
+        "Appropriately captures return values to update caller state",
+        "Solves variable shadowing puzzles with 100% trace accuracy"
+      ]
+    },
+    {
+      "id": "P003",
+      "name": "Loop Boundary / Off-by-One",
+      "concept": "loops",
+      "description": "Student misunderstands loop stopping boundaries (especially zero-indexing and exclusive upper bounds such as in `range(n)` or `<= len(list)`), executing the loop body one time too many or one time too few.",
+      "observable_symptoms": [
+        "Iterating up to `<= len(arr)` leading to out-of-bounds error on final index",
+        "Expecting `range(1, 5)` to include 5 (producing 5 iterations instead of 4)",
+        "Missing the first element (index 0) by initializing iteration variable to 1"
+      ],
+      "common_errors": [
+        "IndexError: list index out of range",
+        "Summation / accumulator is missing first or last item",
+        "Loop runs n-1 or n+1 times instead of expected n"
+      ],
+      "similar_misconceptions": [
+        "P004",
+        "P009"
+      ],
+      "diagnostic_patterns": [
+        "AST BinaryOp condition `< index <= len(items)` or `range(0, len(items) + 1)`",
+        "Learner explanation claims 'range(a, b) includes both a and b'",
+        "Execution trace fails on final index boundary"
+      ],
+      "intervention_strategy": [
+        {
+          "type": "counterexample",
+          "action": "Compare `list(range(5))` which yields `[0, 1, 2, 3, 4]` (5 items total) against student expected values."
+        },
+        {
+          "type": "code_trace",
+          "action": "Step through loop index by index, annotating the exact termination condition check on the final iteration."
+        }
+      ],
+      "resolution_criteria": [
+        "Correctly predicts exact number of iterations and values generated by arbitrary `range(start, stop, step)`",
+        "Safely bounds array index loops without IndexError",
+        "Distinguishes inclusive mathematical intervals from half-open programming intervals"
+      ]
+    },
+    {
+      "id": "P004",
+      "name": "Loop Condition Misunderstanding",
+      "concept": "loops",
+      "description": "Student misunderstands when a loop condition is evaluated, believing that a loop terminates immediately the instant a condition becomes false in the middle of the loop body, or confusing while-loop 'continuation condition' with an 'exit condition'.",
+      "observable_symptoms": [
+        "Believing a loop aborts mid-body rather than finishing the current iteration",
+        "Inverting while-loop condition (writing the stopping condition instead of continuation condition)",
+        "Writing infinite loops because the termination condition can never become false at the header evaluation point"
+      ],
+      "common_errors": [
+        "Infinite loop (TimeoutError)",
+        "Premature loop exit assumption",
+        "Statements after condition violation within body executed unexpectedly"
+      ],
+      "similar_misconceptions": [
+        "P003",
+        "P005",
+        "P006"
+      ],
+      "diagnostic_patterns": [
+        "While test expression negated from desired continuation logic",
+        "Learner reasoning states: 'It stopped at line 3 as soon as x became 5'",
+        "Execution timeout caused by loop variable not progressing towards condition false"
+      ],
+      "intervention_strategy": [
+        {
+          "type": "code_trace",
+          "action": "Illustrate execution step-by-step showing that statements below the updated variable in the body still execute until the loop header is reached again."
+        },
+        {
+          "type": "guided_question",
+          "action": "Prompt learner: 'Is while (x < 5) a condition to KEEP GOING or a condition to STOP?'"
+        }
+      ],
+      "resolution_criteria": [
+        "Correctly describes the discrete evaluation points of loop headers",
+        "Correctly formulates continuation predicates for complex while loops",
+        "Accurately traces all statements executed on the final body pass"
+      ]
+    },
+    {
+      "id": "P005",
+      "name": "Conditional Logic Misunderstanding",
+      "concept": "conditionals",
+      "description": "Student misinterprets conditional branching flow, such as assuming multiple independent `if` statements behave like `if/elif/else`, or misunderstanding the mutually exclusive nature of `if/elif/else` ladders.",
+      "observable_symptoms": [
+        "Using sequential `if` statements when mutually exclusive branches are intended, causing multiple blocks to fire",
+        "Assuming `else` attaches to the first `if` instead of the nearest preceding unclosed conditional block",
+        "Believing all branches are evaluated simultaneously"
+      ],
+      "common_errors": [
+        "State overwritten by subsequent `if` block matching newly modified state",
+        "Unreachable code in conditional branches",
+        "Incorrect branch execution in chained comparisons"
+      ],
+      "similar_misconceptions": [
+        "P004",
+        "P006"
+      ],
+      "diagnostic_patterns": [
+        "Multiple top-level If nodes without Elif/Orelse modifying the same target state",
+        "Learner reasoning asserts 'Only one if can run in a program'",
+        "Execution hits multiple blocks when only one action was desired"
+      ],
+      "intervention_strategy": [
+        {
+          "type": "guided_code_trace",
+          "action": "Trace control flow through separate `if` statements versus an `if-elif-else` chain, highlighting branch skipping."
+        },
+        {
+          "type": "counterexample",
+          "action": "Provide code where first `if` modifies a variable such that the second `if` immediately evaluates to True."
+        }
+      ],
+      "resolution_criteria": [
+        "Correctly explains why subsequent `if` blocks execute even if an earlier `if` succeeded",
+        "Selects `elif` appropriately for mutually exclusive alternatives",
+        "Correctly traces order of evaluation through branching ladders"
+      ]
+    },
+    {
+      "id": "P006",
+      "name": "Boolean Operator Misunderstanding",
+      "concept": "conditionals_and_booleans",
+      "description": "Student misunderstands Boolean precedence or operator semantics, especially writing natural language phrasing like `if x == 1 or 2` (evaluating truthiness of `2` rather than `x == 2`), or confusing `and` vs `or` logic and short-circuit evaluation.",
+      "observable_symptoms": [
+        "Writing `if x == 'a' or 'b'` expecting both comparisons to check equality to `x`",
+        "Confusing `and` with `or` in compound boundary checks (e.g. `x < 0 and x > 10`)",
+        "Misunderstanding operator precedence between `not`, `and`, and `or`"
+      ],
+      "common_errors": [
+        "Condition always evaluates to True because non-empty string or non-zero integer is truthy",
+        "Condition never evaluates to True due to mutually impossible `and` expressions",
+        "Short-circuit evaluation skipped or misunderstood"
+      ],
+      "similar_misconceptions": [
+        "P005",
+        "P001"
+      ],
+      "diagnostic_patterns": [
+        "AST contains `BoolOp(Or, [Compare(x, Eq, a), Constant(b)])`",
+        "Learner claims `if x == 1 or 2:` checks if x is either 1 or 2",
+        "Condition evaluates to True regardless of `x` value"
+      ],
+      "intervention_strategy": [
+        {
+          "type": "counterexample",
+          "action": "Evaluate `bool('b')` or `bool(2)` independently in Python to show why `x == 1 or 2` always evaluates as True."
+        },
+        {
+          "type": "guided_question",
+          "action": "Guide learner to formulate full Boolean comparison: `x == 1 or x == 2` or `x in (1, 2)`."
+        }
+      ],
+      "resolution_criteria": [
+        "Correctly identifies why `x == a or b` is flawed",
+        "Correctly translates compound domain restrictions into syntactically sound Boolean conjunctions and disjunctions",
+        "Accurately evaluates truth values under short-circuit evaluation rules"
+      ]
+    },
+    {
+      "id": "P007",
+      "name": "Return vs Print Confusion",
+      "concept": "functions_and_scope",
+      "description": "Student conflates printing to standard output with returning a value from a function, believing `print()` passes data back to the caller or that `return` displays text on the terminal screen.",
+      "observable_symptoms": [
+        "Writing functions that `print(result)` without `return`, then attempting to store the call in a variable (getting `None`)",
+        "Expecting `return x` to automatically print `x` on standard console output in a standalone script",
+        "Placing code after a `return` statement expecting it to execute"
+      ],
+      "common_errors": [
+        "TypeError: unsupported operand type(s) for NoneType and int",
+        "Output contains extra 'None' when doing `print(my_func())`",
+        "Unreachable code warnings after early return"
+      ],
+      "similar_misconceptions": [
+        "P002",
+        "P008"
+      ],
+      "diagnostic_patterns": [
+        "FunctionDef body terminates with Call to print instead of Return",
+        "Caller assigns result of void function: `res = func()` followed by `res + 1`",
+        "Learner explanation says 'The function returned the printed number to the screen'"
+      ],
+      "intervention_strategy": [
+        {
+          "type": "counterexample",
+          "action": "Show that `val = print(5)` sets `val = None`, while `val = return_five()` sets `val = 5`."
+        },
+        {
+          "type": "code_trace",
+          "action": "Contrast console output display (ephemeral user interface) with programmatic data return (passing data between code components)."
+        }
+      ],
+      "resolution_criteria": [
+        "Consistently uses `return` for values intended for downstream computation",
+        "Correctly predicts that calling a function containing only `print` evaluates to `None` in expressions",
+        "Understands that `return` immediately terminates function execution"
+      ]
+    },
+    {
+      "id": "P008",
+      "name": "Parameter vs Argument Confusion",
+      "concept": "functions_and_scope",
+      "description": "Student confuses formal parameters (function definition placeholders) with actual arguments (values passed at call time), believing parameter names must match argument variable names, or using undefined variables as parameters.",
+      "observable_symptoms": [
+        "Believing caller variable must be renamed to match function definition parameter name",
+        "Passing undefined identifiers as arguments instead of literals or bound variables",
+        "Hardcoding values inside function body instead of utilizing the passed parameter variables"
+      ],
+      "common_errors": [
+        "NameError: name 'parameter_name' is not defined at call site",
+        "Ignoring passed arguments by reading fixed global variables",
+        "Refusing to reuse a generic function because argument variable names differ"
+      ],
+      "similar_misconceptions": [
+        "P002",
+        "P007"
+      ],
+      "diagnostic_patterns": [
+        "Function defines parameter `x`, but body uses global variable `a` directly",
+        "Learner asserts: 'I had to name my variable x because the function parameter is x'",
+        "Call site passes string `'x'` when variable `x` was intended"
+      ],
+      "intervention_strategy": [
+        {
+          "type": "guided_question",
+          "action": "Compare a function to a recipe: the recipe ingredient placeholder ('flour') works whether you bring brand A or brand B."
+        },
+        {
+          "type": "code_trace",
+          "action": "Trace function call mapping: caller variable `age = 25` bound to parameter `num` inside the function activation record."
+        }
+      ],
+      "resolution_criteria": [
+        "Correctly invokes functions with varying argument names and expressions",
+        "Writes general-purpose functions relying exclusively on parameter names rather than external global names",
+        "Accurately maps positional and keyword arguments to parameters"
+      ]
+    },
+    {
+      "id": "P009",
+      "name": "List/Array Indexing Misunderstanding",
+      "concept": "lists_and_indexing",
+      "description": "Student misunderstands zero-based list indexing or slice semantics, confusing an element's 1-based ordinal position with its index, or confusing list elements with their index positions.",
+      "observable_symptoms": [
+        "Accessing `items[1]` expecting the first element instead of `items[0]`",
+        "Treating element value as the index (e.g. `items[item]` where item is a string/object)",
+        "Misunderstanding slice endpoint `items[0:3]` expecting 4 elements"
+      ],
+      "common_errors": [
+        "TypeError: list indices must be integers or slices, not str",
+        "IndexError: list index out of range on `items[len(items)]`",
+        "Off-by-one element retrieval in sequential access"
+      ],
+      "similar_misconceptions": [
+        "P003",
+        "P010"
+      ],
+      "diagnostic_patterns": [
+        "AST Subscript using element iterator instead of index integer",
+        "`arr[len(arr)]` lookup in code",
+        "Learner states 'items[1] is the first item in the list'"
+      ],
+      "intervention_strategy": [
+        {
+          "type": "counterexample",
+          "action": "Display memory index grid: Index 0 -> First Item, Index 1 -> Second Item, showing `len(arr) - 1` as final item."
+        },
+        {
+          "type": "code_trace",
+          "action": "Differentiate `for item in items:` (accesses values) from `for i in range(len(items)):` (generates indices)."
+        }
+      ],
+      "resolution_criteria": [
+        "Correctly retrieves first, last, and nth elements without index errors",
+        "Distinguishes element values from their integer positional indices",
+        "Accurately computes sub-slice lengths using `stop - start`"
+      ]
+    },
+    {
+      "id": "P010",
+      "name": "Mutable State / Reference Confusion",
+      "concept": "data_structures_and_state",
+      "description": "Student misunderstands reference semantics and mutable objects, believing list assignment creates an independent copy (`b = a`) or that modifying a list in a function won't affect the caller's object.",
+      "observable_symptoms": [
+        "Performing `b = a` and being surprised when `b.append(x)` also modifies `a`",
+        "Believing `list(a)` or `a[:]` is identical to reference alias `b = a`",
+        "Creating lists of lists with repeated references (e.g. `[[0]*3]*3`) and wondering why changing one row alters all rows"
+      ],
+      "common_errors": [
+        "Unexpected data corruption across aliased references",
+        "Failed deep copy vs shallow copy behavior",
+        "Unintentional side-effects in function arguments"
+      ],
+      "similar_misconceptions": [
+        "P001",
+        "P002",
+        "P009"
+      ],
+      "diagnostic_patterns": [
+        "Assignment `list2 = list1` followed by in-place mutation (`.append()`, `.sort()`, `[i] = ...`)",
+        "Multiplied list references `[[]] * n`",
+        "Learner explanation: 'b is a separate copy of a'"
+      ],
+      "intervention_strategy": [
+        {
+          "type": "code_trace",
+          "action": "Draw heap reference arrows: both variables `a` and `b` pointing to the exact same list object ID in memory."
+        },
+        {
+          "type": "counterexample",
+          "action": "Print `id(a) == id(b)` for reference alias versus `id(a) == id(a.copy())` for shallow copy."
+        }
+      ],
+      "resolution_criteria": [
+        "Correctly predicts state changes across aliased reference variables",
+        "Applies `.copy()`, slicing `[:]`, or `copy.deepcopy()` appropriately when mutation isolation is needed",
+        "Understands in-place mutation methods vs methods returning new objects"
+      ]
+    }
+  ]
+}

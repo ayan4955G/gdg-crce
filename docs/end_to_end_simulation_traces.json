@@ -1,0 +1,410 @@
+[
+  {
+    "learner_id": "LEARNER_A",
+    "target_misconception": "P003",
+    "diagnosis": {
+      "status": "DIAGNOSED",
+      "primary": {
+        "id": "P003",
+        "confidence": 0.75
+      },
+      "alternatives": [
+        {
+          "id": "P004",
+          "confidence": 0.02
+        },
+        {
+          "id": "P001",
+          "confidence": 0.01
+        },
+        {
+          "id": "P010",
+          "confidence": 0.01
+        }
+      ],
+      "evidence": [
+        "Reasoning Cue for P003: Found expressions ['inclusive']"
+      ],
+      "model_version": "relearn-hybrid-v1.0",
+      "expert_reasoning": "Multi-source evidence converges on P003 based on syntax, runtime and conceptual verbalization."
+    },
+    "intervention": {
+      "type": "hint",
+      "content": "In Python, range(start, stop) generates integers starting at 'start' and stopping strictly BEFORE 'stop' (half-open interval [start, stop)).",
+      "target_misconception": "P003",
+      "follow_up_question": "If you want a loop to execute with values 1, 2, 3, 4, 5, what stop value must you pass to range(1, ?)?",
+      "is_validated": true,
+      "validation_notes": "Passed answer leakage and pedagogical safety validations."
+    },
+    "resolution": {
+      "status": "LIKELY_RESOLVED",
+      "confidence": 0.92,
+      "evidence": {
+        "similar_problem": true,
+        "different_problem": false,
+        "transfer_problem": true,
+        "misconception_still_detected": false,
+        "attempts_evaluated": 2
+      },
+      "summary": "Student solved transfer and isomorphic problems. Conceptual misconception P003 is successfully remediated.",
+      "attempt_evaluations": [
+        {
+          "type": "isomorphic",
+          "is_correct": true,
+          "diagnosed_status": "CORRECT",
+          "diagnosed_misconception": "CORRECT",
+          "confidence": 0.98
+        },
+        {
+          "type": "transfer",
+          "is_correct": true,
+          "diagnosed_status": "CORRECT",
+          "diagnosed_misconception": "CORRECT",
+          "confidence": 0.98
+        }
+      ]
+    },
+    "final_profile": {
+      "learner_id": "LEARNER_A",
+      "concepts": {
+        "variables": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "loops": {
+          "estimated_mastery": 0.49,
+          "mastery_percentage": 49,
+          "confidence_level": "Low",
+          "attempts": 2,
+          "successes": 1
+        },
+        "conditionals": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "conditionals_and_booleans": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "functions_and_scope": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "lists_and_indexing": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "data_structures_and_state": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        }
+      },
+      "misconceptions": {
+        "P003": {
+          "id": "P003",
+          "occurrences": 1,
+          "resolved": true,
+          "confidence": 0.75,
+          "first_diagnosed_at": "2026-10-03T12:00:09.086528",
+          "last_diagnosed_at": "2026-10-03T12:00:09.086528",
+          "reassessments": 1,
+          "interventions_received": 0,
+          "resolved_at": "2026-10-03T12:00:09.180490",
+          "resolution_confidence": 0.92
+        }
+      },
+      "total_interactions": 2,
+      "active_misconceptions_count": 0,
+      "resolved_misconceptions_count": 1
+    }
+  },
+  {
+    "learner_id": "LEARNER_B",
+    "target_misconception": "P006",
+    "diagnosis": {
+      "status": "DIAGNOSED",
+      "primary": {
+        "id": "P006",
+        "confidence": 0.87
+      },
+      "alternatives": [
+        {
+          "id": "P003",
+          "confidence": 0.01
+        },
+        {
+          "id": "P004",
+          "confidence": 0.01
+        },
+        {
+          "id": "P002",
+          "confidence": 0.01
+        }
+      ],
+      "evidence": [
+        "AST Pattern (BOOL_CONSTANT_IN_OR): Found constant '2' in 'or' expression (e.g. 'x == a or b')",
+        "Reasoning Cue for P006: Found expressions ['or 2']"
+      ],
+      "model_version": "relearn-hybrid-v1.0",
+      "expert_reasoning": "Multi-source evidence converges on P006 based on syntax, runtime and conceptual verbalization."
+    },
+    "intervention": {
+      "type": "hint",
+      "content": "In Python, 'x == 1 or 2' does NOT check if x equals 1 or equals 2. It checks '(x == 1) or (bool(2))'.",
+      "target_misconception": "P006",
+      "follow_up_question": "How do you write the condition so that x is explicitly compared to both 1 and 2?",
+      "is_validated": true,
+      "validation_notes": "Passed answer leakage and pedagogical safety validations."
+    },
+    "resolution": {
+      "status": "UNRESOLVED",
+      "confidence": 0.88,
+      "evidence": {
+        "similar_problem": false,
+        "different_problem": false,
+        "transfer_problem": false,
+        "misconception_still_detected": true,
+        "attempts_evaluated": 2
+      },
+      "summary": "Original misconception P006 was repeatedly rediagnosed during reassessment.",
+      "attempt_evaluations": [
+        {
+          "type": "isomorphic",
+          "is_correct": false,
+          "diagnosed_status": "DIAGNOSED",
+          "diagnosed_misconception": "P006",
+          "confidence": 0.56
+        },
+        {
+          "type": "transfer",
+          "is_correct": false,
+          "diagnosed_status": "DIAGNOSED",
+          "diagnosed_misconception": "P002",
+          "confidence": 0.55
+        }
+      ]
+    },
+    "final_profile": {
+      "learner_id": "LEARNER_B",
+      "concepts": {
+        "variables": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "loops": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "conditionals": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "conditionals_and_booleans": {
+          "estimated_mastery": 0.49,
+          "mastery_percentage": 49,
+          "confidence_level": "Low",
+          "attempts": 2,
+          "successes": 1
+        },
+        "functions_and_scope": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "lists_and_indexing": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "data_structures_and_state": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        }
+      },
+      "misconceptions": {
+        "P006": {
+          "id": "P006",
+          "occurrences": 1,
+          "resolved": false,
+          "confidence": 0.87,
+          "first_diagnosed_at": "2026-10-03T12:00:09.231421",
+          "last_diagnosed_at": "2026-10-03T12:00:09.231421",
+          "reassessments": 1,
+          "interventions_received": 0
+        }
+      },
+      "total_interactions": 2,
+      "active_misconceptions_count": 1,
+      "resolved_misconceptions_count": 0
+    }
+  },
+  {
+    "learner_id": "LEARNER_C",
+    "target_misconception": "P007",
+    "diagnosis": {
+      "status": "DIAGNOSED",
+      "primary": {
+        "id": "P007",
+        "confidence": 0.65
+      },
+      "alternatives": [
+        {
+          "id": "P002",
+          "confidence": 0.03
+        },
+        {
+          "id": "P004",
+          "confidence": 0.03
+        },
+        {
+          "id": "P001",
+          "confidence": 0.03
+        }
+      ],
+      "evidence": [
+        "AST Pattern (FUNCTION_PRINT_WITHOUT_RETURN): Function 'add' uses print() but has no return statement."
+      ],
+      "model_version": "relearn-hybrid-v1.0",
+      "expert_reasoning": "Multi-source evidence converges on P007 based on syntax, runtime and conceptual verbalization."
+    },
+    "intervention": {
+      "type": "hint",
+      "content": "print() displays text on the screen for humans to see. return sends a value back to the program so other code can use it.",
+      "target_misconception": "P007",
+      "follow_up_question": "What keyword must replace or precede print in compute(a, b) so res receives the number 7?",
+      "is_validated": true,
+      "validation_notes": "Passed answer leakage and pedagogical safety validations."
+    },
+    "resolution": {
+      "status": "UNRESOLVED",
+      "confidence": 0.88,
+      "evidence": {
+        "similar_problem": false,
+        "different_problem": false,
+        "transfer_problem": true,
+        "misconception_still_detected": true,
+        "attempts_evaluated": 2
+      },
+      "summary": "Original misconception P007 was repeatedly rediagnosed during reassessment.",
+      "attempt_evaluations": [
+        {
+          "type": "isomorphic",
+          "is_correct": false,
+          "diagnosed_status": "DIAGNOSED",
+          "diagnosed_misconception": "P007",
+          "confidence": 0.55
+        },
+        {
+          "type": "transfer",
+          "is_correct": true,
+          "diagnosed_status": "CORRECT",
+          "diagnosed_misconception": "CORRECT",
+          "confidence": 0.98
+        }
+      ]
+    },
+    "final_profile": {
+      "learner_id": "LEARNER_C",
+      "concepts": {
+        "variables": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "loops": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "conditionals": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "conditionals_and_booleans": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "functions_and_scope": {
+          "estimated_mastery": 0.49,
+          "mastery_percentage": 49,
+          "confidence_level": "Low",
+          "attempts": 2,
+          "successes": 1
+        },
+        "lists_and_indexing": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        },
+        "data_structures_and_state": {
+          "estimated_mastery": 0.5,
+          "mastery_percentage": 50,
+          "confidence_level": "Low",
+          "attempts": 0,
+          "successes": 0
+        }
+      },
+      "misconceptions": {
+        "P007": {
+          "id": "P007",
+          "occurrences": 1,
+          "resolved": false,
+          "confidence": 0.65,
+          "first_diagnosed_at": "2026-10-03T12:00:09.430205",
+          "last_diagnosed_at": "2026-10-03T12:00:09.430205",
+          "reassessments": 1,
+          "interventions_received": 0
+        }
+      },
+      "total_interactions": 2,
+      "active_misconceptions_count": 1,
+      "resolved_misconceptions_count": 0
+    }
+  }
+]

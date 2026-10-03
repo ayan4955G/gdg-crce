@@ -1,0 +1,4822 @@
+[
+  {
+    "id": "EX0832",
+    "question": {
+      "id": "Q_CONTRAST_P003_1",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "Loop stops one early because loop boundary exclusive bound means it only reaches 4. (Attempt variation 2)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [
+        "P004",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P003 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Loop boundary off-by-one.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P003"
+    }
+  },
+  {
+    "id": "EX0952",
+    "question": {
+      "id": "Q_PARTIAL_P003_21",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0912",
+    "question": {
+      "id": "Q_CONTRAST_P008_0",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 7)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX0978",
+    "question": {
+      "id": "Q_PARTIAL_P005_17",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0992",
+    "question": {
+      "id": "Q_PARTIAL_P006_1",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0846",
+    "question": {
+      "id": "Q_CONTRAST_P003_0",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "Loop stops one early because loop boundary exclusive bound means it only reaches 4. (Attempt variation 16)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [
+        "P004",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P003 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Loop boundary off-by-one.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P003"
+    }
+  },
+  {
+    "id": "EX0916",
+    "question": {
+      "id": "Q_CONTRAST_P008_1",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 11)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX0975",
+    "question": {
+      "id": "Q_PARTIAL_P005_14",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0928",
+    "question": {
+      "id": "Q_CONTRAST_P008_1",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 23)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX0983",
+    "question": {
+      "id": "Q_PARTIAL_P005_22",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0856",
+    "question": {
+      "id": "Q_CONTRAST_P004_0",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 1)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX0870",
+    "question": {
+      "id": "Q_CONTRAST_P004_2",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 15)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX0986",
+    "question": {
+      "id": "Q_PARTIAL_P005_25",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0990",
+    "question": {
+      "id": "Q_PARTIAL_P005_29",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0972",
+    "question": {
+      "id": "Q_PARTIAL_P005_11",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0981",
+    "question": {
+      "id": "Q_PARTIAL_P005_20",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0866",
+    "question": {
+      "id": "Q_CONTRAST_P004_1",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 11)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX0876",
+    "question": {
+      "id": "Q_CONTRAST_P004_2",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 21)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX0840",
+    "question": {
+      "id": "Q_CONTRAST_P003_0",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "Loop stops one early because loop boundary exclusive bound means it only reaches 4. (Attempt variation 10)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [
+        "P004",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P003 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Loop boundary off-by-one.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P003"
+    }
+  },
+  {
+    "id": "EX1003",
+    "question": {
+      "id": "Q_PARTIAL_P006_12",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0970",
+    "question": {
+      "id": "Q_PARTIAL_P005_9",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0991",
+    "question": {
+      "id": "Q_PARTIAL_P006_0",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0854",
+    "question": {
+      "id": "Q_CONTRAST_P003_2",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "Loop stops one early because loop boundary exclusive bound means it only reaches 4. (Attempt variation 24)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [
+        "P004",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P003 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Loop boundary off-by-one.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P003"
+    }
+  },
+  {
+    "id": "EX0880",
+    "question": {
+      "id": "Q_CONTRAST_P004_0",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 25)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX0961",
+    "question": {
+      "id": "Q_PARTIAL_P005_0",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX1015",
+    "question": {
+      "id": "Q_PARTIAL_P006_24",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0960",
+    "question": {
+      "id": "Q_PARTIAL_P003_29",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0943",
+    "question": {
+      "id": "Q_PARTIAL_P003_12",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX1019",
+    "question": {
+      "id": "Q_PARTIAL_P006_28",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX1013",
+    "question": {
+      "id": "Q_PARTIAL_P006_22",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0834",
+    "question": {
+      "id": "Q_CONTRAST_P003_0",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "Loop stops one early because loop boundary exclusive bound means it only reaches 4. (Attempt variation 4)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [
+        "P004",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P003 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Loop boundary off-by-one.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P003"
+    }
+  },
+  {
+    "id": "EX0922",
+    "question": {
+      "id": "Q_CONTRAST_P008_1",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 17)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX0878",
+    "question": {
+      "id": "Q_CONTRAST_P004_1",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 23)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX0939",
+    "question": {
+      "id": "Q_PARTIAL_P003_8",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0930",
+    "question": {
+      "id": "Q_CONTRAST_P008_0",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 25)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX0954",
+    "question": {
+      "id": "Q_PARTIAL_P003_23",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0965",
+    "question": {
+      "id": "Q_PARTIAL_P005_4",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0902",
+    "question": {
+      "id": "Q_CONTRAST_P002_0",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was assumed to be global or inherited from somewhere in the call stack. (Attempt variation 22)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P002",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P002 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Scope confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P002"
+    }
+  },
+  {
+    "id": "EX0945",
+    "question": {
+      "id": "Q_PARTIAL_P003_14",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX1016",
+    "question": {
+      "id": "Q_PARTIAL_P006_25",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0967",
+    "question": {
+      "id": "Q_PARTIAL_P005_6",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0944",
+    "question": {
+      "id": "Q_PARTIAL_P003_13",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0962",
+    "question": {
+      "id": "Q_PARTIAL_P005_1",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0933",
+    "question": {
+      "id": "Q_PARTIAL_P003_2",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0982",
+    "question": {
+      "id": "Q_PARTIAL_P005_21",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0852",
+    "question": {
+      "id": "Q_CONTRAST_P003_0",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "Loop stops one early because loop boundary exclusive bound means it only reaches 4. (Attempt variation 22)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [
+        "P004",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P003 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Loop boundary off-by-one.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P003"
+    }
+  },
+  {
+    "id": "EX0884",
+    "question": {
+      "id": "Q_CONTRAST_P002_0",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was assumed to be global or inherited from somewhere in the call stack. (Attempt variation 4)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P002",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P002 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Scope confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P002"
+    }
+  },
+  {
+    "id": "EX0906",
+    "question": {
+      "id": "Q_CONTRAST_P008_0",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 1)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX1009",
+    "question": {
+      "id": "Q_PARTIAL_P006_18",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX1011",
+    "question": {
+      "id": "Q_PARTIAL_P006_20",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX1012",
+    "question": {
+      "id": "Q_PARTIAL_P006_21",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0968",
+    "question": {
+      "id": "Q_PARTIAL_P005_7",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX1014",
+    "question": {
+      "id": "Q_PARTIAL_P006_23",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0890",
+    "question": {
+      "id": "Q_CONTRAST_P002_0",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was assumed to be global or inherited from somewhere in the call stack. (Attempt variation 10)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P002",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P002 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Scope confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P002"
+    }
+  },
+  {
+    "id": "EX0836",
+    "question": {
+      "id": "Q_CONTRAST_P003_2",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "Loop stops one early because loop boundary exclusive bound means it only reaches 4. (Attempt variation 6)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [
+        "P004",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P003 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Loop boundary off-by-one.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P003"
+    }
+  },
+  {
+    "id": "EX0904",
+    "question": {
+      "id": "Q_CONTRAST_P002_2",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was assumed to be global or inherited from somewhere in the call stack. (Attempt variation 24)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P002",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P002 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Scope confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P002"
+    }
+  },
+  {
+    "id": "EX0858",
+    "question": {
+      "id": "Q_CONTRAST_P004_2",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 3)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX0900",
+    "question": {
+      "id": "Q_CONTRAST_P002_1",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was assumed to be global or inherited from somewhere in the call stack. (Attempt variation 20)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P002",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P002 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Scope confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P002"
+    }
+  },
+  {
+    "id": "EX0995",
+    "question": {
+      "id": "Q_PARTIAL_P006_4",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0938",
+    "question": {
+      "id": "Q_PARTIAL_P003_7",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0874",
+    "question": {
+      "id": "Q_CONTRAST_P004_0",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 19)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX0999",
+    "question": {
+      "id": "Q_PARTIAL_P006_8",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0969",
+    "question": {
+      "id": "Q_PARTIAL_P005_8",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0979",
+    "question": {
+      "id": "Q_PARTIAL_P005_18",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0860",
+    "question": {
+      "id": "Q_CONTRAST_P004_1",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 5)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX0934",
+    "question": {
+      "id": "Q_PARTIAL_P003_3",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0949",
+    "question": {
+      "id": "Q_PARTIAL_P003_18",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0850",
+    "question": {
+      "id": "Q_CONTRAST_P003_1",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "Loop stops one early because loop boundary exclusive bound means it only reaches 4. (Attempt variation 20)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [
+        "P004",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P003 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Loop boundary off-by-one.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P003"
+    }
+  },
+  {
+    "id": "EX0957",
+    "question": {
+      "id": "Q_PARTIAL_P003_26",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0838",
+    "question": {
+      "id": "Q_CONTRAST_P003_1",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "Loop stops one early because loop boundary exclusive bound means it only reaches 4. (Attempt variation 8)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [
+        "P004",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P003 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Loop boundary off-by-one.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P003"
+    }
+  },
+  {
+    "id": "EX0953",
+    "question": {
+      "id": "Q_PARTIAL_P003_22",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX1000",
+    "question": {
+      "id": "Q_PARTIAL_P006_9",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0908",
+    "question": {
+      "id": "Q_CONTRAST_P008_2",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 3)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX1007",
+    "question": {
+      "id": "Q_PARTIAL_P006_16",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0977",
+    "question": {
+      "id": "Q_PARTIAL_P005_16",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0924",
+    "question": {
+      "id": "Q_CONTRAST_P008_0",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 19)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX0918",
+    "question": {
+      "id": "Q_CONTRAST_P008_0",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 13)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX0994",
+    "question": {
+      "id": "Q_PARTIAL_P006_3",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0882",
+    "question": {
+      "id": "Q_CONTRAST_P002_1",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was assumed to be global or inherited from somewhere in the call stack. (Attempt variation 2)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P002",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P002 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Scope confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P002"
+    }
+  },
+  {
+    "id": "EX1018",
+    "question": {
+      "id": "Q_PARTIAL_P006_27",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0973",
+    "question": {
+      "id": "Q_PARTIAL_P005_12",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0989",
+    "question": {
+      "id": "Q_PARTIAL_P005_28",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0964",
+    "question": {
+      "id": "Q_PARTIAL_P005_3",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0931",
+    "question": {
+      "id": "Q_PARTIAL_P003_0",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0940",
+    "question": {
+      "id": "Q_PARTIAL_P003_9",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0936",
+    "question": {
+      "id": "Q_PARTIAL_P003_5",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0864",
+    "question": {
+      "id": "Q_CONTRAST_P004_2",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 9)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX0862",
+    "question": {
+      "id": "Q_CONTRAST_P004_0",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 7)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX1001",
+    "question": {
+      "id": "Q_PARTIAL_P006_10",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0920",
+    "question": {
+      "id": "Q_CONTRAST_P008_2",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 15)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX0948",
+    "question": {
+      "id": "Q_PARTIAL_P003_17",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0898",
+    "question": {
+      "id": "Q_CONTRAST_P002_2",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was assumed to be global or inherited from somewhere in the call stack. (Attempt variation 18)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P002",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P002 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Scope confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P002"
+    }
+  },
+  {
+    "id": "EX0998",
+    "question": {
+      "id": "Q_PARTIAL_P006_7",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0896",
+    "question": {
+      "id": "Q_CONTRAST_P002_0",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was assumed to be global or inherited from somewhere in the call stack. (Attempt variation 16)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P002",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P002 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Scope confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P002"
+    }
+  },
+  {
+    "id": "EX0926",
+    "question": {
+      "id": "Q_CONTRAST_P008_2",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 21)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX0946",
+    "question": {
+      "id": "Q_PARTIAL_P003_15",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0976",
+    "question": {
+      "id": "Q_PARTIAL_P005_15",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX1020",
+    "question": {
+      "id": "Q_PARTIAL_P006_29",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0868",
+    "question": {
+      "id": "Q_CONTRAST_P004_0",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 13)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX0950",
+    "question": {
+      "id": "Q_PARTIAL_P003_19",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX1017",
+    "question": {
+      "id": "Q_PARTIAL_P006_26",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0955",
+    "question": {
+      "id": "Q_PARTIAL_P003_24",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0886",
+    "question": {
+      "id": "Q_CONTRAST_P002_2",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was assumed to be global or inherited from somewhere in the call stack. (Attempt variation 6)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P002",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P002 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Scope confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P002"
+    }
+  },
+  {
+    "id": "EX0942",
+    "question": {
+      "id": "Q_PARTIAL_P003_11",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0844",
+    "question": {
+      "id": "Q_CONTRAST_P003_1",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "Loop stops one early because loop boundary exclusive bound means it only reaches 4. (Attempt variation 14)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [
+        "P004",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P003 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Loop boundary off-by-one.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P003"
+    }
+  },
+  {
+    "id": "EX1006",
+    "question": {
+      "id": "Q_PARTIAL_P006_15",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0941",
+    "question": {
+      "id": "Q_PARTIAL_P003_10",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0993",
+    "question": {
+      "id": "Q_PARTIAL_P006_2",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0959",
+    "question": {
+      "id": "Q_PARTIAL_P003_28",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX1004",
+    "question": {
+      "id": "Q_PARTIAL_P006_13",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0935",
+    "question": {
+      "id": "Q_PARTIAL_P003_4",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0892",
+    "question": {
+      "id": "Q_CONTRAST_P002_2",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was assumed to be global or inherited from somewhere in the call stack. (Attempt variation 12)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P002",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P002 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Scope confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P002"
+    }
+  },
+  {
+    "id": "EX0963",
+    "question": {
+      "id": "Q_PARTIAL_P005_2",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0888",
+    "question": {
+      "id": "Q_CONTRAST_P002_1",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was assumed to be global or inherited from somewhere in the call stack. (Attempt variation 8)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P002",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P002 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Scope confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P002"
+    }
+  },
+  {
+    "id": "EX0966",
+    "question": {
+      "id": "Q_PARTIAL_P005_5",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0956",
+    "question": {
+      "id": "Q_PARTIAL_P003_25",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0872",
+    "question": {
+      "id": "Q_CONTRAST_P004_1",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "As soon as x reaches 4 + 1 inside body it halts immediately before doing increment check. (Attempt variation 17)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P004",
+      "alternatives": [
+        "P003",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P004 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Mid-body exit misconception.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P004"
+    }
+  },
+  {
+    "id": "EX1010",
+    "question": {
+      "id": "Q_PARTIAL_P006_19",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0974",
+    "question": {
+      "id": "Q_PARTIAL_P005_13",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX1008",
+    "question": {
+      "id": "Q_PARTIAL_P006_17",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0997",
+    "question": {
+      "id": "Q_PARTIAL_P006_6",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0951",
+    "question": {
+      "id": "Q_PARTIAL_P003_20",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0971",
+    "question": {
+      "id": "Q_PARTIAL_P005_10",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0910",
+    "question": {
+      "id": "Q_CONTRAST_P008_1",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 5)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX0894",
+    "question": {
+      "id": "Q_CONTRAST_P002_1",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was assumed to be global or inherited from somewhere in the call stack. (Attempt variation 14)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P002",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P002 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Scope confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P002"
+    }
+  },
+  {
+    "id": "EX0984",
+    "question": {
+      "id": "Q_PARTIAL_P005_23",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0980",
+    "question": {
+      "id": "Q_PARTIAL_P005_19",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0848",
+    "question": {
+      "id": "Q_CONTRAST_P003_2",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "Loop stops one early because loop boundary exclusive bound means it only reaches 4. (Attempt variation 18)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [
+        "P004",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P003 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Loop boundary off-by-one.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P003"
+    }
+  },
+  {
+    "id": "EX0947",
+    "question": {
+      "id": "Q_PARTIAL_P003_16",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX1002",
+    "question": {
+      "id": "Q_PARTIAL_P006_11",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0985",
+    "question": {
+      "id": "Q_PARTIAL_P005_24",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0937",
+    "question": {
+      "id": "Q_PARTIAL_P003_6",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX1005",
+    "question": {
+      "id": "Q_PARTIAL_P006_14",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0987",
+    "question": {
+      "id": "Q_PARTIAL_P005_26",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  },
+  {
+    "id": "EX0958",
+    "question": {
+      "id": "Q_PARTIAL_P003_27",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0932",
+    "question": {
+      "id": "Q_PARTIAL_P003_1",
+      "text": "What does this code print?\n\nfor i in range(1, 5):\n    print(i, end=' ')",
+      "concept": "loops",
+      "code_snippet": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "1 2 3 4",
+      "reasoning": "I guessed 1 2 3 4 by lucky coincidence, but I actually thought Loop Boundary / Off-by-One applied here.",
+      "code": "for i in range(1, 5):\n    print(i, end=' ')"
+    },
+    "expected_answer": "1 2 3 4",
+    "correct": true,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('1 2 3 4') but reasoning exhibits misconception P003",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P003).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "partial_P003"
+    }
+  },
+  {
+    "id": "EX0996",
+    "question": {
+      "id": "Q_PARTIAL_P006_5",
+      "text": "What does this code print?\n\nx = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')",
+      "concept": "conditionals_and_booleans",
+      "code_snippet": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "Match",
+      "reasoning": "I guessed Match by lucky coincidence, but I actually thought Boolean Operator Misunderstanding applied here.",
+      "code": "x = 3\nif x == 1 or 2:\n    print('Match')\nelse:\n    print('No Match')"
+    },
+    "expected_answer": "Match",
+    "correct": true,
+    "misconception": {
+      "primary": "P006",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('Match') but reasoning exhibits misconception P006",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P006).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals_and_booleans",
+      "template_group": "partial_P006"
+    }
+  },
+  {
+    "id": "EX0842",
+    "question": {
+      "id": "Q_CONTRAST_P003_2",
+      "text": "What is the final value of x?\nx = 0\nwhile x < 5:\n    x += 1",
+      "concept": "loops",
+      "code_snippet": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "4",
+      "reasoning": "Loop stops one early because loop boundary exclusive bound means it only reaches 4. (Attempt variation 12)",
+      "code": "x = 0\nwhile x < 5:\n    x += 1"
+    },
+    "expected_answer": "5",
+    "correct": false,
+    "misconception": {
+      "primary": "P003",
+      "alternatives": [
+        "P004",
+        "P002",
+        "P008"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer '4'",
+      "Reasoning distinguishes P003 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer '4' driven specifically by Loop boundary off-by-one.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "loops",
+      "template_group": "contrast_P003"
+    }
+  },
+  {
+    "id": "EX0914",
+    "question": {
+      "id": "Q_CONTRAST_P008_2",
+      "text": "Why does calling calculate() fail?\ndef calculate():\n    return factor * 2\ncalculate()",
+      "concept": "functions_and_scope",
+      "code_snippet": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "NameError",
+      "reasoning": "factor was supposed to be passed as an argument but was forgotten in function definition parameters. (Attempt variation 9)",
+      "code": "def calculate():\n    return factor * 2\ncalculate()"
+    },
+    "expected_answer": "NameError",
+    "correct": false,
+    "misconception": {
+      "primary": "P008",
+      "alternatives": [
+        "P003",
+        "P004",
+        "P002"
+      ],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Contrast problem testing same surface answer 'NameError'",
+      "Reasoning distinguishes P008 from competitor"
+    ],
+    "expert_reasoning": "Contrast benchmark sample: Learner produces answer 'NameError' driven specifically by Parameter confusion.",
+    "difficulty": "intermediate",
+    "sample_category": "difficult_contrast_same_answer",
+    "split_metadata": {
+      "concept": "functions_and_scope",
+      "template_group": "contrast_P008"
+    }
+  },
+  {
+    "id": "EX0988",
+    "question": {
+      "id": "Q_PARTIAL_P005_27",
+      "text": "What is printed by this code?\n\nx = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')",
+      "concept": "conditionals",
+      "code_snippet": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "learner_response": {
+      "type": "code_and_reasoning",
+      "answer": "A\nB",
+      "reasoning": "I guessed A\nB by lucky coincidence, but I actually thought Conditional Logic Misunderstanding applied here.",
+      "code": "x = 15\nif x > 10:\n    print('A')\nif x > 5:\n    print('B')"
+    },
+    "expected_answer": "A\nB",
+    "correct": true,
+    "misconception": {
+      "primary": "P005",
+      "alternatives": [],
+      "is_ambiguous": false
+    },
+    "evidence": [
+      "Answer was correct ('A\nB') but reasoning exhibits misconception P005",
+      "Partial understanding with compensatory guessing or lucky error cancellation"
+    ],
+    "expert_reasoning": "Learner obtained the correct surface output through flawed mental model (P005).",
+    "difficulty": "intermediate",
+    "sample_category": "partial_understanding",
+    "split_metadata": {
+      "concept": "conditionals",
+      "template_group": "partial_P005"
+    }
+  }
+]

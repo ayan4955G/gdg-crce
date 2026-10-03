@@ -1,0 +1,34 @@
+{
+  "Baseline A (TF-IDF + LogReg)": {
+    "test_accuracy": 1.0,
+    "test_macro_f1": 1.0,
+    "test_weighted_f1": 1.0,
+    "unseen_accuracy": 1.0,
+    "unseen_macro_f1": 1.0,
+    "contrast_differentiation_accuracy": 1.0
+  },
+  "Baseline B (Dense Embedding + MLP)": {
+    "test_accuracy": 0.9784,
+    "test_macro_f1": 0.9646,
+    "test_weighted_f1": 0.9757,
+    "unseen_accuracy": 1.0,
+    "unseen_macro_f1": 1.0,
+    "contrast_differentiation_accuracy": 1.0
+  },
+  "Baseline C (GBM Classifier Head)": {
+    "test_accuracy": 1.0,
+    "test_macro_f1": 1.0,
+    "test_weighted_f1": 1.0,
+    "unseen_accuracy": 1.0,
+    "unseen_macro_f1": 1.0,
+    "contrast_differentiation_accuracy": 1.0
+  },
+  "Re:Learn Flagship (Hybrid Engine)": {
+    "test_accuracy": 0.8919,
+    "test_macro_f1": 0.8849,
+    "test_weighted_f1": 0.8899,
+    "unseen_accuracy": 0.4786,
+    "unseen_macro_f1": 0.4419,
+    "contrast_differentiation_accuracy": 0.7414
+  }
+}

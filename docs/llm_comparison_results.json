@@ -1,0 +1,12 @@
+{
+  "relearn_hybrid": {
+    "accuracy": 0.8919,
+    "macro_f1": 0.8849,
+    "insufficient_evidence_recall": 1.0
+  },
+  "generic_llm_zero_shot": {
+    "accuracy": 0.7297,
+    "macro_f1": 0.7396,
+    "insufficient_evidence_recall": 0.22
+  }
+}
