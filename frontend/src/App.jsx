@@ -1,6 +1,24 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 
 const API_BASE = 'http://127.0.0.1:8000/api/v1';
+
+function Icon({ name, size = 18, className = '' }) {
+  const paths = {
+    brain: <><path d="M12 4a3 3 0 0 0-5.8 1.1A3.4 3.4 0 0 0 4 11.3a3.2 3.2 0 0 0 2 5.8A3 3 0 0 0 12 19"/><path d="M12 4a3 3 0 0 1 5.8 1.1 3.4 3.4 0 0 1 2.2 6.2 3.2 3.2 0 0 1-2 5.8A3 3 0 0 1 12 19"/><path d="M12 4v16M8 8c2 0 2 2 4 2m4-2c-2 0-2 2-4 2m-4 4c2 0 2 2 4 2m4-2c-2 0-2 2-4 2"/></>,
+    target: <><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></>,
+    chart: <><path d="M4 19V5m0 14h17"/><path d="m7 15 4-4 3 2 5-6"/></>,
+    flask: <><path d="M9 3h6m-5 0v6l-5.5 8.5A2.3 2.3 0 0 0 6.4 21h11.2a2.3 2.3 0 0 0 1.9-3.5L14 9V3"/><path d="M8 15h8"/></>,
+    book: <><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 5.5v13A2.5 2.5 0 0 1 6.5 16H20M8 7h8"/></>,
+    back: <><path d="m15 18-6-6 6-6"/><path d="M9 12h11"/></>,
+    open: <path d="m9 18 6-6-6-6"/>,
+    sparkle: <><path d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-2-5.8L4 11l6-2.2z"/><path d="m19 14 .9 2.1L22 17l-2.1.8L19 20l-.8-2.2L16 17l2.2-.9z"/></>,
+  };
+  return <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name] || paths.sparkle}</svg>;
+}
+
+function LoadingSpinner() {
+  return <span className="loading-spinner" aria-hidden="true" />;
+}
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('learn'); // 'learn', 'dashboard', 'evaluation', 'taxonomy'
@@ -9,6 +27,7 @@ export default function App() {
   // Catalog & Learning Journey state
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(null);
+  const [learningView, setLearningView] = useState('list');
   const [studentAnswer, setStudentAnswer] = useState('');
   const [studentReasoning, setStudentReasoning] = useState('');
   const [studentCode, setStudentCode] = useState('');
@@ -45,9 +64,6 @@ export default function App() {
       const res = await fetch(`${API_BASE}/questions`);
       const data = await res.json();
       setQuestions(data);
-      if (data.length > 0 && !currentQuestion) {
-        selectQuestion(data[0]);
-      }
     } catch (err) {
       console.error("Failed to load questions:", err);
     }
@@ -90,6 +106,7 @@ export default function App() {
 
   const selectQuestion = (q) => {
     setCurrentQuestion(q);
+    setLearningView('question');
     setStudentAnswer('');
     setStudentReasoning('');
     setStudentCode(q.starter_code || '');
@@ -106,6 +123,7 @@ export default function App() {
       return;
     }
     setLoading(true);
+    setLearningView('diagnosis');
     try {
       const payload = {
         question_id: currentQuestion.id,
@@ -134,6 +152,15 @@ export default function App() {
       fetchLearnerProfile();
     } catch (err) {
       console.error("Diagnosis error:", err);
+      setDiagnosisResult({
+        status: 'MODEL_UNAVAILABLE',
+        primary: { id: 'MODEL_UNAVAILABLE', confidence: 0 },
+        alternatives: [],
+        evidence: [],
+        model_version: 'Nemotron',
+        expert_reasoning: 'The diagnosis request failed. Check the backend connection and try again.',
+      });
+      setJourneyStep('diagnosed');
     } finally {
       setLoading(false);
     }
@@ -223,34 +250,34 @@ export default function App() {
       {/* Top Navbar */}
       <header className="navbar">
         <a href="#home" className="brand">
-          <span>🧠 Re:Learn</span>
+          <Icon name="brain" size={22} /> Re:Learn
           <span className="brand-badge">Adaptive Core</span>
         </a>
 
         <nav className="nav-links">
           <button 
             className={`nav-btn ${activeTab === 'learn' ? 'active' : ''}`}
-            onClick={() => setActiveTab('learn')}
+            onClick={() => { setActiveTab('learn'); setLearningView('list'); }}
           >
-            <span>🎯</span> Adaptive Learning
+            <Icon name="target" /> Adaptive Learning
           </button>
           <button 
             className={`nav-btn ${activeTab === 'dashboard' ? 'active' : ''}`}
             onClick={() => setActiveTab('dashboard')}
           >
-            <span>📊</span> Student Mastery
+            <Icon name="chart" /> Student Mastery
           </button>
           <button 
             className={`nav-btn ${activeTab === 'evaluation' ? 'active' : ''}`}
             onClick={() => setActiveTab('evaluation')}
           >
-            <span>🔬</span> Research & Ablation
+            <Icon name="flask" /> Research & Ablation
           </button>
           <button 
             className={`nav-btn ${activeTab === 'taxonomy' ? 'active' : ''}`}
             onClick={() => setActiveTab('taxonomy')}
           >
-            <span>📚</span> Misconception Taxonomy
+            <Icon name="book" /> Misconception Taxonomy
           </button>
         </nav>
 
@@ -265,6 +292,39 @@ export default function App() {
         {/* TAB 1: ADAPTIVE LEARNING JOURNEY */}
         {activeTab === 'learn' && (
           <div>
+            {learningView === 'list' ? (
+              <section className="question-library">
+                <div className="question-library-heading">
+                  <div>
+                    <span className="eyebrow">ADAPTIVE LEARNING</span>
+                    <h1>Questions</h1>
+                    <p>Choose a question to open its full problem page.</p>
+                  </div>
+                  <span className="question-count">{questions.length} questions</span>
+                </div>
+                <div className="question-table-wrap">
+                  <table className="question-table">
+                    <thead><tr><th>Question</th><th>Concept</th><th>Level</th><th></th></tr></thead>
+                    <tbody>
+                      {questions.map((q, index) => (
+                        <tr key={q.id}>
+                          <td><button className="question-row-link" onClick={() => selectQuestion(q)}><span className="question-row-index">{String(index + 1).padStart(2, '0')}</span><span><strong>{q.title}</strong><small>{q.id}</small></span></button></td>
+                          <td><span className="badge badge-indigo">{q.concept}</span></td>
+                          <td><span className="badge badge-emerald">{q.difficulty}</span></td>
+                          <td><button className="question-open-button" onClick={() => selectQuestion(q)}>Open <Icon name="open" size={16} /></button></td>
+                        </tr>
+                      ))}
+                      {questions.length === 0 && <tr><td colSpan="4" className="question-empty">Loading questions…</td></tr>}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            ) : (
+              <>
+            <div className="question-page-heading">
+              <button className="back-to-questions" onClick={() => setLearningView('list')}><Icon name="back" /> All questions</button>
+              <div><span className="eyebrow">QUESTION</span><h1>{currentQuestion?.title}</h1></div>
+            </div>
             {/* Stepper Progress */}
             <div className="stepper">
               <div className={`step-item ${journeyStep === 'question' ? 'active' : (journeyStep !== 'question' ? 'completed' : '')}`}>
@@ -289,24 +349,15 @@ export default function App() {
               </div>
             </div>
 
-            {/* Question Selector Bar */}
-            <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem', overflowX: 'auto', paddingBottom: '0.5rem' }}>
-              {questions.map((q) => (
-                <button
-                  key={q.id}
-                  onClick={() => selectQuestion(q)}
-                  className={`btn ${currentQuestion?.id === q.id ? 'btn-primary' : 'btn-secondary'}`}
-                  style={{ fontSize: '0.82rem', padding: '0.5rem 0.9rem', whiteSpace: 'nowrap' }}
-                >
-                  {q.title}
-                </button>
-              ))}
+            <div className="question-page-tabs" role="tablist" aria-label="Question page sections">
+              <button className={`question-page-tab ${learningView === 'question' ? 'active' : ''}`} onClick={() => setLearningView('question')} role="tab" aria-selected={learningView === 'question'}>Problem</button>
+              <button className={`question-page-tab ${learningView === 'diagnosis' ? 'active' : ''}`} onClick={() => setLearningView('diagnosis')} role="tab" aria-selected={learningView === 'diagnosis'}>AI Diagnosis</button>
             </div>
 
             {currentQuestion && (
-              <div className="grid-2">
+              <div className="learning-detail-content">
                 {/* Left Column: Problem & Interactive Editor */}
-                <div className="glass-panel">
+                {learningView === 'question' && <div className="glass-panel question-detail-card">
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                     <span className="badge badge-indigo">{currentQuestion.concept}</span>
                     <span className="badge badge-emerald">{currentQuestion.difficulty}</span>
@@ -358,7 +409,7 @@ export default function App() {
                       disabled={loading}
                       style={{ flex: 1 }}
                     >
-                      {loading ? 'Analyzing Evidence...' : '🔬 Analyze & Diagnose'}
+                      {loading ? <><LoadingSpinner /> Analyzing with AI…</> : <><Icon name="sparkle" /> Analyze &amp; Diagnose</>}
                     </button>
                     <button
                       className="btn btn-secondary"
@@ -372,12 +423,18 @@ export default function App() {
                       Load Sample Error (P003)
                     </button>
                   </div>
-                </div>
+                </div>}
 
                 {/* Right Column: Dynamic Stage Outputs */}
-                <div>
+                {learningView === 'diagnosis' && <div className="learning-diagnosis-panel">
+                  {loading && journeyStep === 'question' && (
+                    <div className="glass-panel ai-processing-card" role="status" aria-live="polite">
+                      <LoadingSpinner />
+                      <div><h2>AI is reviewing your answer</h2><p>Nemotron is checking your output, reasoning, and code.</p></div>
+                    </div>
+                  )}
                   {/* Stage 1: Waiting */}
-                  {journeyStep === 'question' && (
+                  {!loading && journeyStep === 'question' && (
                     <div className="glass-panel" style={{ textAlign: 'center', padding: '3.5rem 2rem' }}>
                       <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔍</div>
                       <h3 style={{ marginBottom: '0.5rem' }}>Awaiting Learner Reasoning</h3>
@@ -609,8 +666,10 @@ while i < 5:
                       </button>
                     </div>
                   )}
-                </div>
+                </div>}
               </div>
+            )}
+              </>
             )}
           </div>
         )}
@@ -829,3 +888,5 @@ while i < 5:
     </div>
   );
 }
+
+
