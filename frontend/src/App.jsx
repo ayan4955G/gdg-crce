@@ -1,4 +1,5 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import DiagnosisFlowChart from './components/DiagnosisFlowChart';
 
 const API_BASE = 'http://127.0.0.1:8000/api/v1';
 
@@ -427,6 +428,17 @@ export default function App() {
 
                 {/* Right Column: Dynamic Stage Outputs */}
                 {learningView === 'diagnosis' && <div className="learning-diagnosis-panel">
+                  {/* Interactive React Flow Diagram */}
+                  <DiagnosisFlowChart
+                    studentAnswer={studentAnswer}
+                    studentReasoning={studentReasoning}
+                    diagnosisResult={diagnosisResult}
+                    interventionResult={interventionResult}
+                    resolutionResult={resolutionResult}
+                    loading={loading}
+                    journeyStep={journeyStep}
+                  />
+
                   {loading && journeyStep === 'question' && (
                     <div className="glass-panel ai-processing-card" role="status" aria-live="polite">
                       <LoadingSpinner />
@@ -435,12 +447,31 @@ export default function App() {
                   )}
                   {/* Stage 1: Waiting */}
                   {!loading && journeyStep === 'question' && (
-                    <div className="glass-panel" style={{ textAlign: 'center', padding: '3.5rem 2rem' }}>
-                      <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔍</div>
-                      <h3 style={{ marginBottom: '0.5rem' }}>Awaiting Learner Reasoning</h3>
-                      <p style={{ color: 'var(--text-secondary)', maxWidth: '420px', margin: '0 auto' }}>
-                        Re:Learn will parse your code AST, execute in an isolated sandbox, and analyze your verbalized reasoning to detect subtle misconceptions.
+                    <div className="glass-panel" style={{ textAlign: 'center', padding: '2rem' }}>
+                      <div style={{ fontSize: '2.2rem', marginBottom: '0.5rem' }}>🔍</div>
+                      <h3 style={{ marginBottom: '0.4rem' }}>Awaiting Learner Reasoning</h3>
+                      <p style={{ color: 'var(--text-secondary)', maxWidth: '520px', margin: '0 auto 1.25rem', fontSize: '0.9rem' }}>
+                        Submit your answer and causal reasoning in the <strong>Problem</strong> tab to run multi-modal AST parsing, sandbox execution, and Nemotron NIM diagnosis.
                       </p>
+                      <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem' }}>
+                        <button
+                          className="btn btn-secondary"
+                          onClick={() => setLearningView('question')}
+                        >
+                          ← Go to Problem &amp; Enter Answer
+                        </button>
+                        <button
+                          className="btn btn-primary"
+                          onClick={() => {
+                            setStudentAnswer("1 2 3 4 5");
+                            setStudentReasoning("range(1, 5) starts at 1 and stops at 5 inclusive, so it prints numbers 1 through 5.");
+                            handleDiagnose();
+                          }}
+                          disabled={loading}
+                        >
+                          <Icon name="sparkle" /> Test Sample Misconception (P003)
+                        </button>
+                      </div>
                     </div>
                   )}
 
